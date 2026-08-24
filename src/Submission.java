@@ -5,7 +5,7 @@ private int sizeKb;
 private long timestampMS;
 private int version;
 private boolean flagged;
-public Submission(String studentId, String fileName, int sizeKb, long timestampMS, int version, boolean flagged)
+public Submission(String studentId, String fileName, int sizeKb, long timestampMS)
     {
     this.studentId = studentId;
     this.fileName = fileName;
@@ -13,5 +13,29 @@ public Submission(String studentId, String fileName, int sizeKb, long timestampM
     this.timestampMS = timestampMS;
     this.version = 1;
     this.flagged = false;
+    }
+    public String getStudentId()
+    {
+        return studentId;
+    }
+    public String getFileName()
+    {
+        return fileName;
+    }
+    public int getSizeKb()
+    {
+        return sizeKb;
+    }
+    public int getVersion()
+    {
+        return version;
+    }
+    public boolean isFlagged()
+    {
+        return flagged;
+    }
+    public void setFlagged(boolean flagged)
+    {
+        this.flagged = flagged;
     }
 }
