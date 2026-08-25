@@ -5,7 +5,7 @@ private int sizeKb;
 private long timestampMs;
 private int version;
 private boolean flagged;
-public Submission(String studentId, String fileName, int sizeKb, long timestampMS)
+public Submission(String studentId, String fileName, int sizeKb, long timestampMs)
     {
     this.studentId = studentId;
     this.fileName = fileName;
@@ -37,5 +37,12 @@ public Submission(String studentId, String fileName, int sizeKb, long timestampM
     public void setFlagged(boolean flagged)
     {
         this.flagged = flagged;
+    }
+    public void replaceFile(String fileName, int sizeKb, long timestampMs)
+    {
+    this.fileName = fileName;
+    this.sizeKb = sizeKb;
+    this.timestampMs = timestampMs;
+    this.version++;
     }
 }
