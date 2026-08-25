@@ -53,4 +53,10 @@ public class Submission {
         this.timestampMs = timestampMs;
         this.version++;
     }
+    public void restoreFile(String fileName, int sizeKb, long timestampMs, int version) {
+        this.fileName = fileName;
+        this.sizeKb = sizeKb;
+        this.timestampMs = timestampMs;
+        this.version = version;
+    }
 }
