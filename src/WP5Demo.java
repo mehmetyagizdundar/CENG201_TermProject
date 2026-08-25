@@ -2,7 +2,7 @@ public class WP5Demo {
     public static void main(String[] args) {
         System.out.println("=== WP5: TIMELINE (AVL vs BST) DEMO ===");
 
-        SubmissionTimeline avlTree = new SubmissionTimeline();
+        SubmissionTimeLine avlTree = new SubmissionTimeLine();
         PlainSubmissionBST bstTree = new PlainSubmissionBST();
 
         int testSize = 1000;

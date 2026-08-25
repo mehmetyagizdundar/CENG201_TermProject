@@ -3,14 +3,14 @@ public class ExamGateEngine {
     private CircularUploadQueue intakeQueue;
     private HeapDispatcher dispatcher;
     private SubmissionRegistry registry;
-    private SubmissionTimeline timeline;
+    private SubmissionTimeLine timeline;
     private RollbackService rollbackService;
 
     public ExamGateEngine(int queueCapacity, int heapCapacity) {
         this.intakeQueue = new CircularUploadQueue(queueCapacity);
         this.dispatcher = new HeapDispatcher(heapCapacity);
         this.registry = new SubmissionRegistry();
-        this.timeline = new SubmissionTimeline();
+        this.timeline = new SubmissionTimeLine();
         this.rollbackService = new RollbackService(this.registry);
     }
 
@@ -54,7 +54,7 @@ public class ExamGateEngine {
         return registry;
     }
 
-    public SubmissionTimeline getTimeline() {
+    public SubmissionTimeLine getTimeline() {
         return timeline;
     }
 

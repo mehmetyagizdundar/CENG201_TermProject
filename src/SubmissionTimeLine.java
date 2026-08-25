@@ -1,4 +1,4 @@
-public class SubmissionTimeline {
+public class SubmissionTimeLine {
 
     public static class Node {
         public Submission data;
@@ -13,7 +13,7 @@ public class SubmissionTimeline {
     private Node root;
     private int size;
 
-    public SubmissionTimeline() {
+    public SubmissionTimeLine() {
         this.root = null;
         this.size = 0;
     }
