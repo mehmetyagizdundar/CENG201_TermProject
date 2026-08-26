@@ -3,7 +3,6 @@ public class VersionStack {
     private static class Node {
         VersionRecord data;
         Node next;
-
         Node(VersionRecord data, Node next) {
             this.data = data;
             this.next = next;
@@ -11,7 +10,6 @@ public class VersionStack {
     }
     private Node top;
     private int size;
-
     public VersionStack() {
         this.top = null;
         this.size = 0;
@@ -21,7 +19,6 @@ public class VersionStack {
         this.top = new Node(record, this.top);
         this.size++;
     }
-
     public VersionRecord pop() {
         if (top == null) return null;
         VersionRecord item = top.data;

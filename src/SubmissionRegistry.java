@@ -106,7 +106,6 @@ public class SubmissionRegistry {
             }
         }
     }
-
     public void printCollisionReps()
     {
         System.out.println("\n--- Hash Table Bucket & Collision çıktısı ---");
@@ -141,7 +140,6 @@ public class SubmissionRegistry {
                 }
             }
         }
-
         System.out.println("--------------------------------------------");
         System.out.println("Toplam Kapasite   : " + table.length);
         System.out.println("Kayıtlı Elemanlar  : " + size);

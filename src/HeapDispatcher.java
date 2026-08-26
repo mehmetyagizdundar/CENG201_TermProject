@@ -40,10 +40,6 @@ public class HeapDispatcher {
         siftUp(size);
         size++;
     }
-
-    // =========================================================================
-    // 3. POLL (O(log N))
-    // =========================================================================
     public Submission poll() {
         if (size == 0) return null;
 
@@ -57,27 +53,17 @@ public class HeapDispatcher {
         }
         return root;
     }
-
-    // =========================================================================
-    // 4. BOTTOM-UP BUILD HEAP (O(N))
-    // =========================================================================
     public void buildHeap(Submission[] items) {
         if (items == null) return;
         this.heap = new Submission[Math.max(DEFAULT_CAPACITY, items.length * 2)];
         this.size = items.length;
-
         for (int i = 0; i < items.length; i++) {
             this.heap[i] = items[i];
         }
-
         for (int i = (size / 2) - 1; i >= 0; i--) {
             siftDown(i);
         }
     }
-
-    // =========================================================================
-    // YARDIMCI METOTLAR
-    // =========================================================================
     private void siftUp(int index) {
         while (index > 0) {
             int parent = (index - 1) / 2;
@@ -89,20 +75,17 @@ public class HeapDispatcher {
             }
         }
     }
-
     private void siftDown(int index) {
         while (index < size) {
             int leftChild = 2 * index + 1;
             int rightChild = 2 * index + 2;
             int largest = index;
-
             if (leftChild < size && compare(heap[leftChild], heap[largest]) > 0) {
                 largest = leftChild;
             }
             if (rightChild < size && compare(heap[rightChild], heap[largest]) > 0) {
                 largest = rightChild;
             }
-
             if (largest != index) {
                 swap(index, largest);
                 index = largest;
@@ -111,13 +94,11 @@ public class HeapDispatcher {
             }
         }
     }
-
     private void swap(int i, int j) {
         Submission temp = heap[i];
         heap[i] = heap[j];
         heap[j] = temp;
     }
-
     private void resize() {
         Submission[] newHeap = new Submission[heap.length * 2];
         for (int i = 0; i < heap.length; i++) {
@@ -125,11 +106,9 @@ public class HeapDispatcher {
         }
         this.heap = newHeap;
     }
-
     public int size() {
         return size;
     }
-
     public boolean isEmpty() {
         return size == 0;
     }

@@ -5,11 +5,9 @@ public class Submission {
     private long timestampMs;
     private int version;
     private boolean flagged;
-
     public Submission(String studentId, String fileName, int sizeKb, long timestampMs) {
         this(studentId, fileName, sizeKb, timestampMs, false);
     }
-
     public Submission(String studentId, String fileName, int sizeKb, long timestampMs, boolean flagged) {
         this.studentId = studentId;
         this.fileName = fileName;
@@ -18,35 +16,27 @@ public class Submission {
         this.version = 1;
         this.flagged = flagged;
     }
-
     public String getStudentId() {
         return studentId;
     }
-
     public String getFileName() {
         return fileName;
     }
-
     public int getSizeKb() {
         return sizeKb;
     }
-
     public long getTimestampMs() {
         return timestampMs;
     }
-
     public int getVersion() {
         return version;
     }
-
     public boolean isFlagged() {
         return flagged;
     }
-
     public void setFlagged(boolean flagged) {
         this.flagged = flagged;
     }
-
     public void replaceFile(String fileName, int sizeKb, long timestampMs) {
         this.fileName = fileName;
         this.sizeKb = sizeKb;
