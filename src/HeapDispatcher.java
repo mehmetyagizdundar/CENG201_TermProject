@@ -14,22 +14,12 @@ public class HeapDispatcher {
         if (a == b) return 0;
         if (a == null) return -1;
         if (b == null) return 1;
-
-        // Kriter 1: Flagged (Özel durumu olanlar her zaman önce)
         if (a.isFlagged() && !b.isFlagged()) return 1;
         if (!a.isFlagged() && b.isFlagged()) return -1;
-
-        // Kriter 2: Erken teslim eden (Timestamp küçük olan kazanır)
         if (a.getTimestampMs() < b.getTimestampMs()) return 1;
         if (a.getTimestampMs() > b.getTimestampMs()) return -1;
-
-        // Kriter 3: Alfabetik ID sırası (Tie-break)
         return b.getStudentId().compareTo(a.getStudentId());
     }
-
-    // =========================================================================
-    // 2. INSERT (O(log N))
-    // =========================================================================
     public void insert(Submission s) {
         if (s == null) return;
         if (size == heap.length) {
@@ -47,7 +37,6 @@ public class HeapDispatcher {
         heap[0] = heap[size - 1];
         heap[size - 1] = null;
         size--;
-
         if (size > 0) {
             siftDown(0);
         }

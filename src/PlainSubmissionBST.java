@@ -9,7 +9,6 @@ public class PlainSubmissionBST {
             this.data = data;
         }
     }
-
     private Node root;
     private int size;
     private int maxDepth;
@@ -19,13 +18,11 @@ public class PlainSubmissionBST {
         this.size = 0;
         this.maxDepth = 0;
     }
-
     public void insert(Submission s) {
         if (s == null) return;
         root = insertRec(root, s, 1);
         size++;
     }
-
     private Node insertRec(Node root, Submission s, int depth) {
         if (root == null) {
             if (depth > maxDepth) maxDepth = depth;
@@ -45,11 +42,9 @@ public class PlainSubmissionBST {
         }
         return root;
     }
-
     public int getMaxDepth() {
         return maxDepth;
     }
-
     public int size() {
         return size;
     }
