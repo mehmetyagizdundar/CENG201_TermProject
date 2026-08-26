@@ -11,7 +11,7 @@ public class WP3Demo {
         heap.insert(new Submission("S-0010", "d.zip", 100, 9000L, false));
 
         System.out.println("Beklenen: S-0099 -> S-0010 -> S-0055 -> S-0042");
-        System.out.println("Gerceklesen:");
+        System.out.println("Gerçekleşen:");
         while (!heap.isEmpty()) {
             Submission s = heap.poll();
             System.out.println(" -> ID: " + s.getStudentId() + " | Flagged: " + s.isFlagged() + " | Time: " + s.getTimestampMs());
